@@ -23,8 +23,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="basicVertexShader.glsl" />
-    <None Include="basicFragmentShader.glsl" />
-    <None Include="basicFragmentShader2.glsl" />
+    <ClInclude Include="shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\basicFragmentShader2.fs" />
+    <None Include="..\basicFragmentShader.fs" />
+    <None Include="..\basicVertexShader.vs" />
   </ItemGroup>
 </Project>
