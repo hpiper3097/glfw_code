@@ -1,8 +1,6 @@
 #include <glad/glad.h>
 #include <glfw3.h> //must inculde after glad.h
-#include <iostream>
-#include <string>
-#include <fstream>
+#include "shader.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
@@ -58,60 +56,6 @@ int main()
 		return -1;
 	}
 
-	//vertex shader
-	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-	std::ifstream ifs("basicVertexShader.glsl");
-	std::string vertexSource((std::istreambuf_iterator<char>(ifs)),
-		(std::istreambuf_iterator<char>()));
-	ifs.close();
-	const GLchar* source = (const GLchar*)vertexSource.c_str();
-
-	glShaderSource(vertexShader, 1, &source, nullptr);
-	glCompileShader(vertexShader);
-	shaderCompilationCheck(vertexShader);
-
-	//fragment shader
-	GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-	ifs.open("basicFragmentShader.glsl");
-	std::string fragmentSource((std::istreambuf_iterator<char>(ifs)),
-		(std::istreambuf_iterator<char>()));
-	ifs.close();
-	source = (const GLchar*)fragmentSource.c_str();
-
-	glShaderSource(fragmentShader, 1, &source, nullptr);
-	glCompileShader(fragmentShader);
-	shaderCompilationCheck(fragmentShader);
-
-	//fragment shader 2
-	GLuint fragmentShader2 = glCreateShader(GL_FRAGMENT_SHADER);
-	ifs.open("basicFragmentShader2.glsl");
-	std::string fragmentSource2((std::istreambuf_iterator<char>(ifs)),
-		(std::istreambuf_iterator<char>()));
-	ifs.close();
-	source = (const GLchar*)fragmentSource2.c_str();
-
-	glShaderSource(fragmentShader2, 1, &source, nullptr);
-	glCompileShader(fragmentShader2);
-	shaderCompilationCheck(fragmentShader2);
-	
-	//shader program linking
-	GLuint shaderProgram = glCreateProgram();
-	glAttachShader(shaderProgram, vertexShader);
-	glAttachShader(shaderProgram, fragmentShader);
-	glLinkProgram(shaderProgram);
-	programCompilationCheck(shaderProgram);
-
-	GLuint shaderProgram2 = glCreateProgram();
-	glAttachShader(shaderProgram2, vertexShader);
-	glAttachShader(shaderProgram2, fragmentShader2);
-	glLinkProgram(shaderProgram2);
-	programCompilationCheck(shaderProgram2);
-
-	//done with shaders
-	glDeleteShader(vertexShader);
-	glDeleteShader(fragmentShader);
-	glDeleteShader(fragmentShader2);
-
 	GLuint VBO, VAO, EBO, VBO2, VAO2; //vertex array object, vertex buffer object, element buffer object
 	glGenVertexArrays(1, &VAO);
 	glGenVertexArrays(1, &VAO2);
@@ -148,6 +92,9 @@ int main()
 
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); 
 
+	Shader shader1("basicVertexShader.vs", "basicFragmentShader.fs");
+	Shader shader2("basicVertexShader.vs", "basicFragmentShader2.fs");
+
 	while (!glfwWindowShouldClose(window))//game loop
 	{
 		processInput(window);
@@ -155,18 +102,18 @@ int main()
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f); //set color to clear with... sets state
 		glClear(GL_COLOR_BUFFER_BIT); //clears with color... uses state
 
-		glUseProgram(shaderProgram);
+		shader1.use();
 		glBindVertexArray(VAO);
 		//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 		glBindVertexArray(0);
 
-		glUseProgram(shaderProgram2);
+		shader2.use();
 		glBindVertexArray(VAO2);
 
 		float timeValue = glfwGetTime();
 		float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
-		int vertexColorLocation = glGetUniformLocation(shaderProgram2, "ourColor");
+		int vertexColorLocation = glGetUniformLocation(shader2.ID, "ourColor");
 		glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
 
 		glDrawArrays(GL_TRIANGLES, 0, 3);

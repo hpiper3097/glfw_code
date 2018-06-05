@@ -70,8 +70,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\Hayden\Desktop\GLFW Includes\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Hayden\Desktop\GLFW Includes\Libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Hayden\Desktop\glfw_code\GLFW Includes\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Hayden\Desktop\glfw_code\GLFW Includes\Libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
