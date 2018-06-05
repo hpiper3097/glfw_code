@@ -28,8 +28,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\basicFragmentShader2.fs" />
-    <None Include="..\basicFragmentShader.fs" />
-    <None Include="..\basicVertexShader.vs" />
+    <None Include="basicVertexShader.vs" />
+    <None Include="basicFragmentShader2.fs" />
+    <None Include="basicFragmentShader.fs" />
   </ItemGroup>
 </Project>

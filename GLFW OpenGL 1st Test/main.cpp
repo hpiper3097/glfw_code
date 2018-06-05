@@ -18,9 +18,9 @@ float verticies[] =
 
 float verticies2[] =
 {
-	0.5f, -0.25f, 0.0f,
 	-0.5f, -0.75f, 0.0f,
-	0.5f, -0.75f, 0.0f
+	0.0f, -0.5f, 0.0f,
+	0.0f, 0.5f, 0.0f
 };
 
 GLuint indices[] =
@@ -94,7 +94,7 @@ int main()
 
 	Shader shader1("basicVertexShader.vs", "basicFragmentShader.fs");
 	Shader shader2("basicVertexShader.vs", "basicFragmentShader2.fs");
-
+	int x = 0;
 	while (!glfwWindowShouldClose(window))//game loop
 	{
 		processInput(window);
@@ -113,8 +113,11 @@ int main()
 
 		float timeValue = glfwGetTime();
 		float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
-		int vertexColorLocation = glGetUniformLocation(shader2.ID, "ourColor");
-		glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+		float blueValue = (cos(timeValue) / 2.0f) + 0.5f;
+		//int vertexColorLocation = glGetUniformLocation(shader2.ID, "ourColor");
+		//glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+		int vertexOffsetLocation = glGetUniformLocation(shader2.ID, "Offset");
+		glUniform4f(vertexOffsetLocation, greenValue/2, blueValue/2, 0.0f, 0.0f);
 
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 		glBindVertexArray(0);
