@@ -4,7 +4,7 @@
 #include "stb_image.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void processInput(GLFWwindow* window);
+void processInput(GLFWwindow* window, float &mixVar, float &xOffset, float &yOffset);
 void shaderCompilationCheck(GLuint shader);
 void programCompilationCheck(GLuint program);
 
@@ -18,12 +18,12 @@ float verticies[] = {
 	-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // top left 
 };
 
-float verticies2[] =
+/*float verticies2[] =
 {
 	-0.5f, -0.75f, 0.0f,
 	0.5f, -0.5f, 0.0f,
 	0.0f, 0.5f, 0.0f
-};
+};*/
 
 GLuint indices[] =
 {
@@ -58,11 +58,11 @@ int main()
 		return -1;
 	}
 
-	GLuint VBO, VAO, EBO, VBO2, VAO2; //vertex array object, vertex buffer object, element buffer object
+	GLuint VBO, VAO, EBO; //VBO2, VAO2; //vertex array object, vertex buffer object, element buffer object
 	glGenVertexArrays(1, &VAO);
-	glGenVertexArrays(1, &VAO2);
+	//glGenVertexArrays(1, &VAO2);
 	glGenBuffers(1, &VBO);
-	glGenBuffers(1, &VBO2);
+	//glGenBuffers(1, &VBO2);
 	glGenBuffers(1, &EBO);
 	//bind vertex array first, then bind buffer, then configure buffer
 	glBindVertexArray(VAO);
@@ -87,19 +87,17 @@ int main()
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0); //allowed because all that has been done so far was while VBO was bound
-
+	/*
 	glBindVertexArray(VAO2);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO2);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(verticies2), verticies2, GL_STATIC_DRAW);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 	glBindVertexArray(0);
-
+	*/
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); 
 
 	Shader shader1("basicVertexShader.vs", "basicFragmentShader.fs");
-	Shader shader2("basicVertexShader.vs", "basicFragmentShader2.fs");
-	int x = 0;
 
 	GLuint texture, texture2;
 	glGenTextures(1, &texture);
@@ -155,9 +153,11 @@ int main()
 	shader1.setInt("texture1", 0);
 	shader1.setInt("texture2", 1);
 
+	float mixVar = 0, xOffset = 0, yOffset = 0;
+
 	while (!glfwWindowShouldClose(window))//game loop
 	{
-		processInput(window);
+		processInput(window, mixVar, xOffset, yOffset);
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f); //set color to clear with... sets state
 		glClear(GL_COLOR_BUFFER_BIT); //clears with color... uses state
@@ -168,25 +168,12 @@ int main()
 		glActiveTexture(GL_TEXTURE1);
 		glBindTexture(GL_TEXTURE_2D, texture2);
 		glBindVertexArray(VAO);
+		shader1.setFloat("mixVar", mixVar);
+		shader1.setFloat("xOffset", xOffset);
+		shader1.setFloat("yOffset", yOffset);
+
 		//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
-		glBindVertexArray(0);
-
-		shader2.use();
-		glBindVertexArray(VAO2);
-
-		float timeValue = 5 * glfwGetTime();
-		float greenValue = (sin(timeValue*2) / 2.0f) + 0.5f;
-		float blueValue = (cos(timeValue) / 2.0f) + 0.5f;
-		shader2.setFloat("aRed", greenValue / blueValue);
-		shader2.setFloat("aGreen", greenValue);
-		shader2.setFloat("aBlue", blueValue);
-		//int vertexColorLocation = glGetUniformLocation(shader2.ID, "ourColor");
-		//glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
-		int vertexOffsetLocation = glGetUniformLocation(shader2.ID, "Offset");
-		glUniform4f(vertexOffsetLocation, greenValue, blueValue/2, 0.0f, 0.0f);
-
-		glDrawArrays(GL_TRIANGLES, 0, 3);
 		glBindVertexArray(0);
 
 		glfwSwapBuffers(window);
@@ -205,11 +192,53 @@ void framebuffer_size_callback(GLFWwindow* window, int height, int width)
 	glViewport(0, 0, height, width);
 }
 
-void processInput(GLFWwindow* window)
+void processInput(GLFWwindow* window, float &mixVar, float &xOffset, float &yOffset)
 {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 	{
 		glfwSetWindowShouldClose(window, true);
+	}
+
+	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
+	{
+		mixVar += 0.001;
+		if (mixVar > 1.0)
+			mixVar = 1.0;
+	}
+
+	if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
+	{
+		mixVar -= 0.001;
+		if (mixVar < 0)
+			mixVar = 0;
+	}
+
+	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+	{
+		yOffset += 0.001;
+		if (yOffset > .5)
+			yOffset = .5;
+	}
+
+	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+	{
+		yOffset -= 0.001;
+		if (yOffset < -.5)
+			yOffset = -.5;
+	}
+
+	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+	{
+		xOffset += 0.001;
+		if (xOffset > .5)
+			xOffset = .5;
+	}
+
+	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+	{
+		xOffset -= 0.001;
+		if (xOffset < -.5)
+			xOffset = -.5;
 	}
 }
 
