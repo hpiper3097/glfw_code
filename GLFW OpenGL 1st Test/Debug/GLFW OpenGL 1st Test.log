@@ -1,3 +1,3 @@
 ﻿  main.cpp
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(114): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(178): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   GLFW OpenGL 1st Test.vcxproj -> C:\Users\Hayden\Desktop\glfw_code\Debug\GLFW OpenGL 1st Test.exe
