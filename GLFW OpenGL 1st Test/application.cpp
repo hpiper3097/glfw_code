@@ -1,7 +1,7 @@
 #include "application.h"
 
 Application::Application(const unsigned int w, const unsigned int h)
-	: window(nullptr, delWindow)
+	: window(nullptr, delWindow) //default initializer; compiler complains about "no default initializer" otherwise
 {
 	SCR_WIDTH = w;
 	SCR_HEIGHT = h;
