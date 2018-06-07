@@ -3,9 +3,12 @@
 #include "shader.h"
 #include "texture.h"
 #include "stb_image.h"
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
+#include "glm/gtc/type_ptr.hpp"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void processInput(GLFWwindow* window, float &mixVar, float &xOffset, float &yOffset);
+void processInput(GLFWwindow* window, float &mixVar);
 void shaderCompilationCheck(GLuint shader);
 void programCompilationCheck(GLuint program);
 
@@ -59,11 +62,9 @@ int main()
 		return -1;
 	}
 
-	GLuint VBO, VAO, EBO; //VBO2, VAO2; //vertex array object, vertex buffer object, element buffer object
+	GLuint VBO, VAO, EBO; //vertex array object, vertex buffer object, element buffer object
 	glGenVertexArrays(1, &VAO);
-	//glGenVertexArrays(1, &VAO2);
 	glGenBuffers(1, &VBO);
-	//glGenBuffers(1, &VBO2);
 	glGenBuffers(1, &EBO);
 	//bind vertex array first, then bind buffer, then configure buffer
 	glBindVertexArray(VAO);
@@ -88,14 +89,7 @@ int main()
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0); //allowed because all that has been done so far was while VBO was bound
-	/*
-	glBindVertexArray(VAO2);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO2);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(verticies2), verticies2, GL_STATIC_DRAW);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-	glEnableVertexAttribArray(0);
-	glBindVertexArray(0);
-	*/
+	
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); 
 
 	Shader shader1("basicVertexShader.vs", "basicFragmentShader.fs");
@@ -110,11 +104,11 @@ int main()
 	shader1.setInt("texture1", 0);
 	shader1.setInt("texture2", 1);
 
-	auto mixVar = 0.f, xOffset = 0.f, yOffset = 0.f;
+	auto mixVar = 0.f;
 
 	while (!glfwWindowShouldClose(window))//game loop
 	{
-		processInput(window, mixVar, xOffset, yOffset);
+		processInput(window, mixVar);
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f); //set color to clear with... sets state
 		glClear(GL_COLOR_BUFFER_BIT); //clears with color... uses state
@@ -126,10 +120,22 @@ int main()
 		tex2.bind();
 		glBindVertexArray(VAO);
 		shader1.setFloat("mixVar", mixVar);
-		shader1.setFloat("xOffset", xOffset);
-		shader1.setFloat("yOffset", yOffset);
+		glm::mat4 trans;
+		trans = glm::scale(trans, glm::vec3(0.5f, 0.5f, 0.5f));
+		trans = glm::translate(trans, glm::vec3(0.5f, -0.25f, 0.0f));
+		trans = glm::rotate(trans, static_cast<float>(glfwGetTime()), glm::vec3(0.0f, 0.0f, 1.0f));
+		unsigned int transLoc = glGetUniformLocation(shader1.ID, "transform");
+		glUniformMatrix4fv(transLoc, 1, GL_FALSE, glm::value_ptr(trans));
 
 		//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
+
+		trans = glm::mat4();
+		trans = glm::translate(trans, glm::vec3(-0.5f, 0.3f, 0.0f));
+		trans = glm::rotate(trans, static_cast<float>(glfwGetTime()), glm::vec3(0.0f, 0.0f, 1.0f));
+		trans = glm::scale(trans, glm::vec3(glm::cos(static_cast<float>(glfwGetTime())), glm::sin(static_cast<float>(glfwGetTime())), 0.5f));
+		glUniformMatrix4fv(transLoc, 1, GL_FALSE, glm::value_ptr(trans));
+
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 		glBindVertexArray(0);
 
@@ -149,7 +155,7 @@ void framebuffer_size_callback(GLFWwindow* window, int height, int width)
 	glViewport(0, 0, height, width);
 }
 
-void processInput(GLFWwindow* window, float &mixVar, float &xOffset, float &yOffset)
+void processInput(GLFWwindow* window, float &mixVar)
 {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 	{
@@ -168,34 +174,6 @@ void processInput(GLFWwindow* window, float &mixVar, float &xOffset, float &yOff
 		mixVar -= 0.001;
 		if (mixVar < 0)
 			mixVar = 0;
-	}
-
-	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-	{
-		yOffset += 0.001;
-		if (yOffset > .5)
-			yOffset = .5;
-	}
-
-	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-	{
-		yOffset -= 0.001;
-		if (yOffset < -.5)
-			yOffset = -.5;
-	}
-
-	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-	{
-		xOffset += 0.001;
-		if (xOffset > .5)
-			xOffset = .5;
-	}
-
-	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-	{
-		xOffset -= 0.001;
-		if (xOffset < -.5)
-			xOffset = -.5;
 	}
 }
 
