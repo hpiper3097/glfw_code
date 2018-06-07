@@ -6,12 +6,12 @@
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
+#include "assert.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window, float &mixVar);
 void shaderCompilationCheck(GLuint shader);
-void programCompilationCheck(GLuint program);
-
+void programCompilationCheck(GLuint program); 
 const unsigned int SCR_WIDTH = 800, SCR_HEIGHT = 600;
 
 float verticies[] = {
@@ -37,6 +37,7 @@ GLuint indices[] =
 
 int main()
 {
+
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); //version (major)3.(minor)3
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -46,21 +47,17 @@ int main()
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
 
-	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "GLFW OpenGL Test", nullptr, nullptr); //window creation
-	if (window == nullptr)
+	auto delWindow = [](GLFWwindow* window)
 	{
-		std::cout << "Failed to create GLFW Window!\n";
-		glfwTerminate();
-		return -1;
-	}
-	glfwMakeContextCurrent(window);
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); //register callbacks after window creation and before gameloop
+		glfwDestroyWindow(window);
+	};
 
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) //load glad
-	{
-		std::cout << "Failed to initialize glad!\n";
-		return -1;
-	}
+	std::unique_ptr<GLFWwindow, decltype(delWindow)> window(glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "GLFW OpenGL Test", nullptr, nullptr), delWindow); //window creation
+	ASSERT(window.get() != nullptr);
+	glfwMakeContextCurrent(window.get());
+	glfwSetFramebufferSizeCallback(window.get(), framebuffer_size_callback); //register callbacks after window creation and before gameloop
+
+	ASSERT(gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)); //load glad
 
 	GLuint VBO, VAO, EBO; //vertex array object, vertex buffer object, element buffer object
 	glGenVertexArrays(1, &VAO);
@@ -106,9 +103,9 @@ int main()
 
 	auto mixVar = 0.f;
 
-	while (!glfwWindowShouldClose(window))//game loop
+	while (!glfwWindowShouldClose(window.get()))//game loop
 	{
-		processInput(window, mixVar);
+		processInput(window.get(), mixVar);
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f); //set color to clear with... sets state
 		glClear(GL_COLOR_BUFFER_BIT); //clears with color... uses state
@@ -132,14 +129,14 @@ int main()
 
 		trans = glm::mat4();
 		trans = glm::translate(trans, glm::vec3(-0.5f, 0.3f, 0.0f));
-		trans = glm::rotate(trans, static_cast<float>(glfwGetTime()), glm::vec3(0.0f, 0.0f, 1.0f));
-		trans = glm::scale(trans, glm::vec3(glm::cos(static_cast<float>(glfwGetTime())), glm::sin(static_cast<float>(glfwGetTime())), 0.5f));
+		//trans = glm::rotate(trans, static_cast<float>(glfwGetTime()), glm::vec3(0.0f, 0.0f, 1.0f));
+		trans = glm::scale(trans, glm::vec3(glm::sin(static_cast<float>(glfwGetTime())), glm::sin(static_cast<float>(glfwGetTime())), 0.5f));
 		glUniformMatrix4fv(transLoc, 1, GL_FALSE, glm::value_ptr(trans));
 
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 		glBindVertexArray(0);
 
-		glfwSwapBuffers(window);
+		glfwSwapBuffers(window.get());
 		glfwPollEvents();
 	}
 
@@ -164,14 +161,14 @@ void processInput(GLFWwindow* window, float &mixVar)
 
 	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
 	{
-		mixVar += 0.001;
+		mixVar += 0.01;
 		if (mixVar > 1.0)
 			mixVar = 1.0;
 	}
 
 	if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
 	{
-		mixVar -= 0.001;
+		mixVar -= 0.01;
 		if (mixVar < 0)
 			mixVar = 0;
 	}
