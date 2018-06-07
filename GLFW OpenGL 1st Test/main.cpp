@@ -100,6 +100,7 @@ int main()
 
 	Shader shader1("basicVertexShader.vs", "basicFragmentShader.fs");
 	Texture tex1("Textures/container.jpg", GL_RGB, GL_TEXTURE_2D, GL_TEXTURE0);
+	stbi_set_flip_vertically_on_load(true);
 	Texture tex2("Textures/awesomeface.png", GL_RGBA, GL_TEXTURE_2D, GL_TEXTURE1);
 
 	//float borderColor[] = { 1.0f, 1.0f, 0.0f, 1.0f };

@@ -1,3 +1,8 @@
 made 6/4/18
 
 repository made today
+
+6/6/18
+texture and shader have their own classes
+current executable creates a window with a movabe box texture and a variable meme texture on top of it
+beginning transformations today
