@@ -7,11 +7,12 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
 #include "assert.h"
+#include <memory>
+#include <iostream>
+#include "application.h"
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window, float &mixVar);
-void shaderCompilationCheck(GLuint shader);
-void programCompilationCheck(GLuint program); 
+
 const unsigned int SCR_WIDTH = 800, SCR_HEIGHT = 600;
 
 float verticies[] = {
@@ -38,26 +39,7 @@ GLuint indices[] =
 int main()
 {
 
-	glfwInit();
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); //version (major)3.(minor)3
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); //explicitly using core
-
-#ifdef __APPLE__
-	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-#endif
-
-	auto delWindow = [](GLFWwindow* window)
-	{
-		glfwDestroyWindow(window);
-	};
-
-	std::unique_ptr<GLFWwindow, decltype(delWindow)> window(glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "GLFW OpenGL Test", nullptr, nullptr), delWindow); //window creation
-	ASSERT(window.get() != nullptr);
-	glfwMakeContextCurrent(window.get());
-	glfwSetFramebufferSizeCallback(window.get(), framebuffer_size_callback); //register callbacks after window creation and before gameloop
-
-	ASSERT(gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)); //load glad
+	Application app(SCR_WIDTH, SCR_HEIGHT);
 
 	GLuint VBO, VAO, EBO; //vertex array object, vertex buffer object, element buffer object
 	glGenVertexArrays(1, &VAO);
@@ -103,9 +85,9 @@ int main()
 
 	auto mixVar = 0.f;
 
-	while (!glfwWindowShouldClose(window.get()))//game loop
+	while (!glfwWindowShouldClose(app.Window()))//game loop
 	{
-		processInput(window.get(), mixVar);
+		processInput(app.Window(), mixVar);
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f); //set color to clear with... sets state
 		glClear(GL_COLOR_BUFFER_BIT); //clears with color... uses state
@@ -136,20 +118,13 @@ int main()
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 		glBindVertexArray(0);
 
-		glfwSwapBuffers(window.get());
+		glfwSwapBuffers(app.Window());
 		glfwPollEvents();
 	}
 
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
-
-	glfwTerminate();//free resources
 	return 0;
-}
-
-void framebuffer_size_callback(GLFWwindow* window, int height, int width)
-{
-	glViewport(0, 0, height, width);
 }
 
 void processInput(GLFWwindow* window, float &mixVar)
@@ -161,41 +136,15 @@ void processInput(GLFWwindow* window, float &mixVar)
 
 	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
 	{
-		mixVar += 0.01;
+		mixVar += 0.001;
 		if (mixVar > 1.0)
 			mixVar = 1.0;
 	}
 
 	if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
 	{
-		mixVar -= 0.01;
+		mixVar -= 0.001;
 		if (mixVar < 0)
 			mixVar = 0;
-	}
-}
-
-void shaderCompilationCheck(GLuint shader)
-{
-	int success;
-	char infoLog[512];
-	glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
-
-	if (!success)
-	{
-		glGetShaderInfoLog(shader, sizeof(infoLog), nullptr, infoLog);
-		std::cout << "ERROR:SHADER:COMPILATION:FAILED\n" << infoLog << std::endl;
-	}
-}
-
-void programCompilationCheck(GLuint program)
-{
-	int success;
-	char infoLog[512];
-	glGetProgramiv(program, GL_COMPILE_STATUS, &success);
-
-	if (!success)
-	{
-		glGetProgramInfoLog(program, sizeof(infoLog), nullptr, infoLog);
-		std::cout << "ERROR:PROGRAM:COMPILATION:FAILED\n" << infoLog << std::endl;
 	}
 }
