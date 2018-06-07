@@ -1,6 +1,7 @@
 #include <glad/glad.h>
 #include <glfw3.h> //must inculde after glad.h
 #include "shader.h"
+#include "texture.h"
 #include "stb_image.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -98,62 +99,17 @@ int main()
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); 
 
 	Shader shader1("basicVertexShader.vs", "basicFragmentShader.fs");
-
-	GLuint texture, texture2;
-	glGenTextures(1, &texture);
-	glGenTextures(1, &texture2);
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, texture);
-
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+	Texture tex1("Textures/container.jpg", GL_RGB, GL_TEXTURE_2D, GL_TEXTURE0);
+	Texture tex2("Textures/awesomeface.png", GL_RGBA, GL_TEXTURE_2D, GL_TEXTURE1);
 
 	//float borderColor[] = { 1.0f, 1.0f, 0.0f, 1.0f };
-	//glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
-
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR); //don't use mipmaps for mag; mipmaps only used on smaller objects
-
-	int width, height, nrChannels;
-	unsigned char* data = stbi_load("Textures/container.jpg", &width, &height, &nrChannels, 0); //image to put on texture
-
-	if (data)
-	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-		glGenerateMipmap(GL_TEXTURE_2D);
-	}
-	else
-	{
-		std::cout << "ERROR LOADING IMAGE\n";
-	}
-	stbi_image_free(data); //free memory
-	glBindTexture(GL_TEXTURE_2D, 0);
-
-	glActiveTexture(GL_TEXTURE1);
-	glBindTexture(GL_TEXTURE_2D, texture2);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	stbi_set_flip_vertically_on_load(true);
-	data = stbi_load("Textures/awesomeface.png", &width, &height, &nrChannels, 0);
-	if (data)
-	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-		glGenerateMipmap(GL_TEXTURE_2D);
-	}
-	else
-	{
-		std::cout << "ERROR LOADING IMAGE\n";
-	}
-	stbi_image_free(data);
-	glBindTexture(GL_TEXTURE_2D, 0);
+	//glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);//don't use mipmaps for mag; mipmaps only used on smaller objects
 
 	shader1.use();
 	shader1.setInt("texture1", 0);
 	shader1.setInt("texture2", 1);
 
-	float mixVar = 0, xOffset = 0, yOffset = 0;
+	auto mixVar = 0.f, xOffset = 0.f, yOffset = 0.f;
 
 	while (!glfwWindowShouldClose(window))//game loop
 	{
@@ -164,9 +120,9 @@ int main()
 
 		shader1.use();
 		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, texture);
+		tex1.bind();
 		glActiveTexture(GL_TEXTURE1);
-		glBindTexture(GL_TEXTURE_2D, texture2);
+		tex2.bind();
 		glBindVertexArray(VAO);
 		shader1.setFloat("mixVar", mixVar);
 		shader1.setFloat("xOffset", xOffset);
