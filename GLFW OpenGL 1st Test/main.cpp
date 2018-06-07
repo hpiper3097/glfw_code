@@ -16,11 +16,60 @@ void processInput(GLFWwindow* window, float &mixVar);
 const unsigned int SCR_WIDTH = 800, SCR_HEIGHT = 600;
 
 float verticies[] = {
-	// positions          // colors           // texture coords
-	0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // top right
-	0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // bottom right
-	-0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // bottom left
-	-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // top left 
+	-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+	0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
+	0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+	0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+	-0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+	-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+
+	-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+	0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+	0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+	0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+	-0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
+	-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+
+	-0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+	-0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+	-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+	-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+	-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+	-0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+
+	0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+	0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+	0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+	0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+	0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+	0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+
+	-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+	0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
+	0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+	0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+	-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+	-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+
+	-0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+	0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+	0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+	0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+	-0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
+	-0.5f,  0.5f, -0.5f,  0.0f, 1.0f
+};
+
+glm::vec3 cubePositions[] = {
+	glm::vec3(0.0f,  0.0f,  0.0f),
+	glm::vec3(2.0f,  5.0f, -15.0f),
+	glm::vec3(-1.5f, -2.2f, -2.5f),
+	glm::vec3(-3.8f, -2.0f, -12.3f),
+	glm::vec3(2.4f, -0.4f, -3.5f),
+	glm::vec3(-1.7f,  3.0f, -7.5f),
+	glm::vec3(1.3f, -2.0f, -2.5f),
+	glm::vec3(1.5f,  2.0f, -2.5f),
+	glm::vec3(1.5f,  0.2f, -1.5f),
+	glm::vec3(-1.3f,  1.0f, -1.5f)
 };
 
 /*float verticies2[] =
@@ -55,14 +104,11 @@ int main()
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
 	//position attribute
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
-	//color attribute
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3*sizeof(float)));
-	glEnableVertexAttribArray(1);
 	//texture coords attribute
-	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
-	glEnableVertexAttribArray(2);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+	glEnableVertexAttribArray(1);
 
 	glBindVertexArray(0); //typically not done; ony unbind when you need to, however this is showing that you can
 
@@ -74,7 +120,7 @@ int main()
 	Shader shader1("basicVertexShader.vs", "basicFragmentShader.fs");
 	Texture tex1("Textures/container.jpg", GL_RGB, GL_TEXTURE_2D, GL_TEXTURE0);
 	stbi_set_flip_vertically_on_load(true);
-	Texture tex2("Textures/awesomeface.png", GL_RGBA, GL_TEXTURE_2D, GL_TEXTURE1);
+	Texture tex2("Textures/letroll.png", GL_RGBA, GL_TEXTURE_2D, GL_TEXTURE1);
 
 	//float borderColor[] = { 1.0f, 1.0f, 0.0f, 1.0f };
 	//glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);//don't use mipmaps for mag; mipmaps only used on smaller objects
@@ -85,37 +131,51 @@ int main()
 
 	auto mixVar = 0.f;
 
+	glm::mat4 orthProj = glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f); //a higher min plane lets you see through objects when you're too close too them
+	glm::mat4 persProj = glm::perspective(glm::radians(45.0f), static_cast<float>(SCR_WIDTH) / static_cast<float>(SCR_HEIGHT), 0.1f, 100.0f);
+
+	//glm::mat4 model;
+	//model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+	glm::mat4 view; //translating in reverse direction we want to move!!
+	view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+
+	glEnable(GL_DEPTH_TEST);
+
 	while (!glfwWindowShouldClose(app.Window()))//game loop
 	{
 		processInput(app.Window(), mixVar);
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f); //set color to clear with... sets state
-		glClear(GL_COLOR_BUFFER_BIT); //clears with color... uses state
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //clears with color... uses state
 
 		shader1.use();
+
 		glActiveTexture(GL_TEXTURE0);
 		tex1.bind();
 		glActiveTexture(GL_TEXTURE1);
 		tex2.bind();
+
 		glBindVertexArray(VAO);
+
 		shader1.setFloat("mixVar", mixVar);
-		glm::mat4 trans;
-		trans = glm::scale(trans, glm::vec3(0.5f, 0.5f, 0.5f));
-		trans = glm::translate(trans, glm::vec3(0.5f, -0.25f, 0.0f));
-		trans = glm::rotate(trans, static_cast<float>(glfwGetTime()), glm::vec3(0.0f, 0.0f, 1.0f));
-		unsigned int transLoc = glGetUniformLocation(shader1.ID, "transform");
-		glUniformMatrix4fv(transLoc, 1, GL_FALSE, glm::value_ptr(trans));
-
+		//unsigned int modelLoc = glGetUniformLocation(shader1.ID, "model");
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		unsigned int viewLoc = glGetUniformLocation(shader1.ID, "view");
+		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		unsigned int projLoc = glGetUniformLocation(shader1.ID, "projection");
+		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(persProj));
+		
+		//model = glm::rotate(model, 0.001f, glm::vec3(-0.75f, 1.0f, 0.0f));
+		for (unsigned int i = 0; i < 10; i++)
+		{
+			glm::mat4 model;
+			model = glm::translate(model, cubePositions[i]);
+			float angle = glfwGetTime() * (i+1);
+			model = glm::rotate(model, angle, glm::vec3(1.0f, 0.3f, 0.5f));
+			shader1.setMat4("model", model);
 		//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
-
-		trans = glm::mat4();
-		trans = glm::translate(trans, glm::vec3(-0.5f, 0.3f, 0.0f));
-		//trans = glm::rotate(trans, static_cast<float>(glfwGetTime()), glm::vec3(0.0f, 0.0f, 1.0f));
-		trans = glm::scale(trans, glm::vec3(glm::sin(static_cast<float>(glfwGetTime())), glm::sin(static_cast<float>(glfwGetTime())), 0.5f));
-		glUniformMatrix4fv(transLoc, 1, GL_FALSE, glm::value_ptr(trans));
-
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+		}
 		glBindVertexArray(0);
 
 		glfwSwapBuffers(app.Window());
@@ -136,14 +196,14 @@ void processInput(GLFWwindow* window, float &mixVar)
 
 	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
 	{
-		mixVar += 0.001;
+		mixVar += 0.0005;
 		if (mixVar > 1.0)
 			mixVar = 1.0;
 	}
 
 	if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
 	{
-		mixVar -= 0.001;
+		mixVar -= 0.0005;
 		if (mixVar < 0)
 			mixVar = 0;
 	}

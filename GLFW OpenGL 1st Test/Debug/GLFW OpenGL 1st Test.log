@@ -1,6 +1,5 @@
-﻿  application.cpp
-  main.cpp
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(139): warning C4305: '+=': truncation from 'double' to 'float'
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(146): warning C4305: '-=': truncation from 'double' to 'float'
-  Generating Code...
+﻿  main.cpp
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(173): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(199): warning C4305: '+=': truncation from 'double' to 'float'
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(206): warning C4305: '-=': truncation from 'double' to 'float'
   GLFW OpenGL 1st Test.vcxproj -> C:\Users\Hayden\Desktop\glfw_code\Debug\GLFW OpenGL 1st Test.exe
