@@ -7,7 +7,7 @@
 #include <memory>
 #include <iostream>
 
-const auto delWindow = [](GLFWwindow* window) //const to provoke internal linkage
+static auto delWindow = [](GLFWwindow* window) //const to provoke internal linkage
 {
 	glfwDestroyWindow(window);
 };

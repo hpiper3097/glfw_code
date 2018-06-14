@@ -1,4 +1,4 @@
-#include <glad/glad.h>
+#include <glad/glad.h>	
 #include <glfw3.h> //must inculde after glad.h
 #include "shader.h"
 #include "texture.h"
@@ -14,6 +14,7 @@
 void processInput(GLFWwindow* window, float &mixVar);
 
 const unsigned int SCR_WIDTH = 800, SCR_HEIGHT = 600;
+float deltaTime = 0.0f, lastFrame = 0.0f;
 
 float verticies[] = {
 	-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
@@ -85,6 +86,12 @@ GLuint indices[] =
 	1, 2, 3
 };
 
+glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+glm::vec3 cameraTarg = glm::vec3(0.0f, 0.0f, 0.0f);
+glm::vec3 cameraZAxis = glm::normalize(cameraPos - cameraTarg); //points along positive z axis of camera space
+glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
+glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+
 int main()
 {
 
@@ -137,12 +144,20 @@ int main()
 	//glm::mat4 model;
 	//model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 	glm::mat4 view; //translating in reverse direction we want to move!!
-	view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+
+	glm::vec3 cameraXAxis = glm::normalize(glm::cross(cameraUp, cameraZAxis)); //todo: study cross&dot products
+	glm::vec3 cameraYAxis = glm::cross(cameraZAxis, cameraXAxis);
+
+	view = glm::lookAt(glm::vec3(0.0f, 0.0f, 3.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
 	glEnable(GL_DEPTH_TEST);
 
 	while (!glfwWindowShouldClose(app.Window()))//game loop
 	{
+		float currentFrame = glfwGetTime();
+		deltaTime = currentFrame - lastFrame;
+		lastFrame = currentFrame;
+
 		processInput(app.Window(), mixVar);
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f); //set color to clear with... sets state
@@ -168,6 +183,8 @@ int main()
 		//model = glm::rotate(model, 0.001f, glm::vec3(-0.75f, 1.0f, 0.0f));
 		for (unsigned int i = 0; i < 10; i++)
 		{
+			view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+
 			glm::mat4 model;
 			model = glm::translate(model, cubePositions[i]);
 			float angle = glfwGetTime() * (i+1);
@@ -207,4 +224,14 @@ void processInput(GLFWwindow* window, float &mixVar)
 		if (mixVar < 0)
 			mixVar = 0;
 	}
+
+	float cameraSpeed = 2.5f * deltaTime; //adjust accordingly
+	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+		cameraPos += cameraSpeed * cameraFront;
+	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+		cameraPos -= cameraSpeed * cameraFront;
+	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+		cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+		cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
 }
