@@ -1,8 +1,8 @@
 ﻿  main.cpp
 c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(161): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(196): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(222): warning C4305: '+=': truncation from 'double' to 'float'
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(229): warning C4305: '-=': truncation from 'double' to 'float'
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(222): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(229): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
 c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(249): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(250): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(255): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data

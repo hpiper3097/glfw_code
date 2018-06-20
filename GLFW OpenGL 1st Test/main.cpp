@@ -219,14 +219,14 @@ void processInput(GLFWwindow* window, float &mixVar)
 
 	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
 	{
-		mixVar += 0.0005;
+		mixVar += .5 * deltaTime;
 		if (mixVar > 1.0)
 			mixVar = 1.0;
 	}
 
 	if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
 	{
-		mixVar -= 0.0005;
+		mixVar -= .5 * deltaTime;
 		if (mixVar < 0)
 			mixVar = 0;
 	}
