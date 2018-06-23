@@ -133,7 +133,11 @@
   <ItemGroup>
     <ClInclude Include="application.h" />
     <ClInclude Include="assert.h" />
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="header.h" />
+    <ClInclude Include="manager.h" />
     <ClInclude Include="shader.h" />
+    <ClInclude Include="singleton.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="texture.h" />
   </ItemGroup>
