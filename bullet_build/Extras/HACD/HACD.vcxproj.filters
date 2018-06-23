@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\Extras\HACD\hacdGraph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\Extras\HACD\hacdHACD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\Extras\HACD\hacdICHull.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\Extras\HACD\hacdManifoldMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\Extras\HACD\hacdCircularList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\Extras\HACD\hacdGraph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\Extras\HACD\hacdHACD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\Extras\HACD\hacdICHull.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\Extras\HACD\hacdManifoldMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\Extras\HACD\hacdVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\Extras\HACD\hacdVersion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\Extras\HACD\hacdCircularList.inl">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\Extras\HACD\hacdVector.inl">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\Extras\HACD\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{E666572D-0067-3E9E-AF6A-62DDF248A54D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{33A863CA-140D-3B8E-A3F5-66F049D50F69}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

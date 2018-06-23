@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{14B6B698-C1D2-3B26-9F86-9EDA555F2B5C}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/Hayden/Desktop/bullet3/bullet3-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/Hayden/Desktop/bullet3/bullet3-master -BC:/Users/Hayden/Desktop/glfw_code/bullet_build --check-stamp-file C:/Users/Hayden/Desktop/glfw_code/bullet_build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/Hayden/Desktop/bullet3/bullet3-master/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Users\Hayden\Desktop\bullet3\bullet3-master\BulletConfig.cmake.in;C:\Users\Hayden\Desktop\bullet3\bullet3-master\CMakeLists.txt;C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\3.12.0-rc1\CMakeCCompiler.cmake;C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\3.12.0-rc1\CMakeCXXCompiler.cmake;C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\3.12.0-rc1\CMakeRCCompiler.cmake;C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\3.12.0-rc1\CMakeSystem.cmake;C:\Users\Hayden\Desktop\bullet3\bullet3-master\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/Hayden/Desktop/bullet3/bullet3-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/Hayden/Desktop/bullet3/bullet3-master -BC:/Users/Hayden/Desktop/glfw_code/bullet_build --check-stamp-file C:/Users/Hayden/Desktop/glfw_code/bullet_build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/Hayden/Desktop/bullet3/bullet3-master/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Users\Hayden\Desktop\bullet3\bullet3-master\BulletConfig.cmake.in;C:\Users\Hayden\Desktop\bullet3\bullet3-master\CMakeLists.txt;C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\3.12.0-rc1\CMakeCCompiler.cmake;C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\3.12.0-rc1\CMakeCXXCompiler.cmake;C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\3.12.0-rc1\CMakeRCCompiler.cmake;C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\3.12.0-rc1\CMakeSystem.cmake;C:\Users\Hayden\Desktop\bullet3\bullet3-master\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/Hayden/Desktop/bullet3/bullet3-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/Hayden/Desktop/bullet3/bullet3-master -BC:/Users/Hayden/Desktop/glfw_code/bullet_build --check-stamp-file C:/Users/Hayden/Desktop/glfw_code/bullet_build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Users/Hayden/Desktop/bullet3/bullet3-master/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Users\Hayden\Desktop\bullet3\bullet3-master\BulletConfig.cmake.in;C:\Users\Hayden\Desktop\bullet3\bullet3-master\CMakeLists.txt;C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\3.12.0-rc1\CMakeCCompiler.cmake;C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\3.12.0-rc1\CMakeCXXCompiler.cmake;C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\3.12.0-rc1\CMakeRCCompiler.cmake;C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\3.12.0-rc1\CMakeSystem.cmake;C:\Users\Hayden\Desktop\bullet3\bullet3-master\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/Hayden/Desktop/bullet3/bullet3-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/Hayden/Desktop/bullet3/bullet3-master -BC:/Users/Hayden/Desktop/glfw_code/bullet_build --check-stamp-file C:/Users/Hayden/Desktop/glfw_code/bullet_build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/Hayden/Desktop/bullet3/bullet3-master/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Users\Hayden\Desktop\bullet3\bullet3-master\BulletConfig.cmake.in;C:\Users\Hayden\Desktop\bullet3\bullet3-master\CMakeLists.txt;C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\3.12.0-rc1\CMakeCCompiler.cmake;C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\3.12.0-rc1\CMakeCXXCompiler.cmake;C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\3.12.0-rc1\CMakeRCCompiler.cmake;C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\3.12.0-rc1\CMakeSystem.cmake;C:\Users\Hayden\Desktop\bullet3\bullet3-master\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\Hayden\Desktop\glfw_code\bullet_build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\ZERO_CHECK.vcxproj">
+      <Project>{ED6A36AC-9CA0-3E28-99A6-22AECA1CC061}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\BasicDemo\AppBasicExampleGui.vcxproj">
+      <Project>{8B0B5B41-3FF9-3D3D-A7E7-E9EAC2D3E6F0}</Project>
+      <Name>AppBasicExampleGui</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\BasicDemo\App_BasicExample.vcxproj">
+      <Project>{29E4EE63-C826-374E-8E90-BB9596EF74B1}</Project>
+      <Name>App_BasicExample</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\ExampleBrowser\App_ExampleBrowser.vcxproj">
+      <Project>{9BED800B-E47E-3622-ABDB-2DCB24F7BD03}</Project>
+      <Name>App_ExampleBrowser</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\RobotSimulator\App_HelloBulletRobotics.vcxproj">
+      <Project>{C3643366-4599-3A24-9D97-0396FE5ECEDA}</Project>
+      <Name>App_HelloBulletRobotics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\HelloWorld\App_HelloWorld.vcxproj">
+      <Project>{CC9FEFE1-F063-3BEA-9FFD-2893F8F7AC44}</Project>
+      <Name>App_HelloWorld</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\SharedMemory\App_PhysicsServer_SharedMemory.vcxproj">
+      <Project>{EFDC4A3C-C98F-3CF9-A383-64CA05674200}</Project>
+      <Name>App_PhysicsServer_SharedMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\SharedMemory\App_PhysicsServer_SharedMemory_GUI.vcxproj">
+      <Project>{77B2C5A5-AD97-33E8-B12D-DF42D061D4BD}</Project>
+      <Name>App_PhysicsServer_SharedMemory_GUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\SharedMemory\App_PhysicsServer_SharedMemory_VR.vcxproj">
+      <Project>{C5749F61-1952-3578-9DA4-B1BF1FADD1ED}</Project>
+      <Name>App_PhysicsServer_SharedMemory_VR</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\RobotSimulator\App_RobotSimulator.vcxproj">
+      <Project>{9FDF5C38-73BF-37B5-8FD9-C63CB6999E58}</Project>
+      <Name>App_RobotSimulator</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\RobotSimulator\App_RobotSimulator_NoGUI.vcxproj">
+      <Project>{D14C2ACF-C6E8-3F75-81C1-DBA0BFA19207}</Project>
+      <Name>App_RobotSimulator_NoGUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\TwoJoint\App_TwoJoint.vcxproj">
+      <Project>{DADBCB55-0DEB-3C0A-B9D2-C5261FEB5634}</Project>
+      <Name>App_TwoJoint</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\Extras\obj2sdf\App_obj2sdf.vcxproj">
+      <Project>{4010C6BC-9B9F-330A-BF91-7F71E36B3918}</Project>
+      <Name>App_obj2sdf</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\src\Bullet3Serialize\Bullet2FileLoader\Bullet2FileLoader.vcxproj">
+      <Project>{2D2914D6-BF27-32F4-A64C-15CE3CF15793}</Project>
+      <Name>Bullet2FileLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\src\Bullet3Collision\Bullet3Collision.vcxproj">
+      <Project>{9321FEAF-B9C6-366D-B1BA-197D013584DC}</Project>
+      <Name>Bullet3Collision</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\src\Bullet3Common\Bullet3Common.vcxproj">
+      <Project>{D3539E98-183B-3363-9080-6A2DC139BC9C}</Project>
+      <Name>Bullet3Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\src\Bullet3Dynamics\Bullet3Dynamics.vcxproj">
+      <Project>{7975A39C-744F-36C0-BED4-ACB38E3796E2}</Project>
+      <Name>Bullet3Dynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\src\Bullet3Geometry\Bullet3Geometry.vcxproj">
+      <Project>{F148BEED-DB2C-31E2-8B77-3BD56D16DB89}</Project>
+      <Name>Bullet3Geometry</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\src\Bullet3OpenCL\Bullet3OpenCL_clew.vcxproj">
+      <Project>{909302A3-0BDC-3210-81B6-FB0C5CF35A07}</Project>
+      <Name>Bullet3OpenCL_clew</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\src\BulletCollision\BulletCollision.vcxproj">
+      <Project>{E4FC7A6A-C5CF-3F25-A132-77835049154B}</Project>
+      <Name>BulletCollision</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\src\BulletDynamics\BulletDynamics.vcxproj">
+      <Project>{444CED19-BAB7-3D61-9E60-56F18BE3ABDB}</Project>
+      <Name>BulletDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\ExampleBrowser\BulletExampleBrowserLib.vcxproj">
+      <Project>{5A92E689-6AD7-378F-B655-29958A610F60}</Project>
+      <Name>BulletExampleBrowserLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\Extras\Serialize\BulletFileLoader\BulletFileLoader.vcxproj">
+      <Project>{5BB6FF06-CE4D-3462-AAA7-3E2E6B9E00ED}</Project>
+      <Name>BulletFileLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\src\BulletInverseDynamics\BulletInverseDynamics.vcxproj">
+      <Project>{3DF481D0-589D-376D-A8C3-6C1CC0F3F13F}</Project>
+      <Name>BulletInverseDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\Extras\InverseDynamics\BulletInverseDynamicsUtils.vcxproj">
+      <Project>{68286945-F88C-31B2-9DE5-1B8531539B0E}</Project>
+      <Name>BulletInverseDynamicsUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\Extras\BulletRobotics\BulletRobotics.vcxproj">
+      <Project>{F8B631DE-759B-312E-A971-B82A8BD60190}</Project>
+      <Name>BulletRobotics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\src\BulletSoftBody\BulletSoftBody.vcxproj">
+      <Project>{E935C977-1DAD-3D0E-ADB6-8B61D809F16E}</Project>
+      <Name>BulletSoftBody</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\Extras\Serialize\BulletWorldImporter\BulletWorldImporter.vcxproj">
+      <Project>{1F122755-9AC7-3884-B718-0674F31FAABE}</Project>
+      <Name>BulletWorldImporter</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\Extras\Serialize\BulletXmlWorldImporter\BulletXmlWorldImporter.vcxproj">
+      <Project>{347E658A-16D3-3C45-BB0D-AFDD9417F50F}</Project>
+      <Name>BulletXmlWorldImporter</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\ThirdPartyLibs\BussIK\BussIK.vcxproj">
+      <Project>{540204B3-2D77-38A2-A944-CD2512A80206}</Project>
+      <Name>BussIK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\Extras\ConvexDecomposition\ConvexDecomposition.vcxproj">
+      <Project>{92E67B6F-C2A5-39DB-9DF5-479598341827}</Project>
+      <Name>ConvexDecomposition</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\Extras\GIMPACTUtils\GIMPACTUtils.vcxproj">
+      <Project>{6C14665C-402F-3328-921D-0C6975D4A976}</Project>
+      <Name>GIMPACTUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\Extras\HACD\HACD.vcxproj">
+      <Project>{8EC394A9-E3F9-3A6F-843F-1E8AD263BA29}</Project>
+      <Name>HACD</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\src\LinearMath\LinearMath.vcxproj">
+      <Project>{D9AEE14E-9DE9-315D-BECF-E7351B129591}</Project>
+      <Name>LinearMath</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\OpenGLWindow\OpenGLWindow.vcxproj">
+      <Project>{3C332C43-B69D-3606-B55E-747CF19470FA}</Project>
+      <Name>OpenGLWindow</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\test\BulletDynamics\pendulum\Test_BulletDynamics.vcxproj">
+      <Project>{34D2E6D9-7FD4-3693-A240-A17B45C42FA7}</Project>
+      <Name>Test_BulletDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\test\InverseDynamics\Test_BulletInverseDynamics.vcxproj">
+      <Project>{01982553-FF1C-3468-97F9-3CEFCC9AFE86}</Project>
+      <Name>Test_BulletInverseDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\test\InverseDynamics\Test_BulletInverseDynamicsJacobian.vcxproj">
+      <Project>{A0A73DE1-34BA-3B93-89CA-E0FB8CE1C9D9}</Project>
+      <Name>Test_BulletInverseDynamicsJacobian</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\test\InverseDynamics\Test_BulletInverseForwardDynamics.vcxproj">
+      <Project>{E9981529-EAEB-3CEE-BC40-3DE4787B6BD6}</Project>
+      <Name>Test_BulletInverseForwardDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\test\collision\Test_Collision.vcxproj">
+      <Project>{36C44981-3BB2-3D73-BB21-C920C9777BE1}</Project>
+      <Name>Test_Collision</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\test\SharedMemory\Test_PhysicsClientServer.vcxproj">
+      <Project>{FA4F3B1D-4AEC-32A5-AE12-4BE7FF8289DC}</Project>
+      <Name>Test_PhysicsClientServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\test\BulletDynamics\Test_btKinematicCharacterController.vcxproj">
+      <Project>{31211178-F1CE-3FFE-9C4F-907D6BD71799}</Project>
+      <Name>Test_btKinematicCharacterController</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\ThirdPartyLibs\clsocket\clsocket.vcxproj">
+      <Project>{0C59F8D5-8F8F-38A7-827B-5AA3789240E4}</Project>
+      <Name>clsocket</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\test\gtest-1.7.0\gtest.vcxproj">
+      <Project>{8A28DAD8-BAC4-3C29-B410-CB8131DB6994}</Project>
+      <Name>gtest</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\ThirdPartyLibs\Gwen\gwen.vcxproj">
+      <Project>{7F2F0207-6B68-36A3-BC31-C70899FD5A89}</Project>
+      <Name>gwen</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

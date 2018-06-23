@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\src\Bullet3Geometry\b3ConvexHullComputer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\src\Bullet3Geometry\b3GeometryUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\src\Bullet3Geometry\b3AabbUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\src\Bullet3Geometry\b3ConvexHullComputer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\src\Bullet3Geometry\b3GeometryUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\src\Bullet3Geometry\b3GrahamScan2dConvexHull.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\src\Bullet3Geometry\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{E666572D-0067-3E9E-AF6A-62DDF248A54D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{33A863CA-140D-3B8E-A3F5-66F049D50F69}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

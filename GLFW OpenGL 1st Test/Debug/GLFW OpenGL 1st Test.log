@@ -1,14 +1,30 @@
 ﻿  main.cpp
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(161): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(196): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(222): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(229): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(249): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(250): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(255): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(256): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(257): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(258): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(260): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(283): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\bullet_src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\hayden\desktop\glfw_code\bullet_src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\hayden\desktop\glfw_code\bullet_src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(154): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(187): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(213): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(220): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(239): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(240): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(243): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(244): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(245): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(246): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(253): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+glfw3.lib(context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(context.obj)' or at 'C:\Users\Hayden\Desktop\glfw_code\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(init.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(init.obj)' or at 'C:\Users\Hayden\Desktop\glfw_code\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(input.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(input.obj)' or at 'C:\Users\Hayden\Desktop\glfw_code\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(monitor.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(monitor.obj)' or at 'C:\Users\Hayden\Desktop\glfw_code\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(vulkan.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(vulkan.obj)' or at 'C:\Users\Hayden\Desktop\glfw_code\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(window.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(window.obj)' or at 'C:\Users\Hayden\Desktop\glfw_code\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_init.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_init.obj)' or at 'C:\Users\Hayden\Desktop\glfw_code\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_joystick.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_joystick.obj)' or at 'C:\Users\Hayden\Desktop\glfw_code\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_monitor.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_monitor.obj)' or at 'C:\Users\Hayden\Desktop\glfw_code\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_time.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_time.obj)' or at 'C:\Users\Hayden\Desktop\glfw_code\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_tls.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_tls.obj)' or at 'C:\Users\Hayden\Desktop\glfw_code\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_window.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_window.obj)' or at 'C:\Users\Hayden\Desktop\glfw_code\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(wgl_context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(wgl_context.obj)' or at 'C:\Users\Hayden\Desktop\glfw_code\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(egl_context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(egl_context.obj)' or at 'C:\Users\Hayden\Desktop\glfw_code\Debug\glfw.pdb'; linking object as if no debug info
   GLFW OpenGL 1st Test.vcxproj -> C:\Users\Hayden\Desktop\glfw_code\Debug\GLFW OpenGL 1st Test.exe
