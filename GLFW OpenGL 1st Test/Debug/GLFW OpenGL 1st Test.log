@@ -1,13 +1,16 @@
 ﻿  main.cpp
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(143): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(173): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(199): warning C4305: '+=': truncation from 'double' to 'float'
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(206): warning C4305: '-=': truncation from 'double' to 'float'
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(225): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(226): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(230): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(231): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(232): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(233): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(240): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\bullet_src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\hayden\desktop\glfw_code\bullet_src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\hayden\desktop\glfw_code\bullet_src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(154): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(184): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(217): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(224): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(243): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(244): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(248): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(249): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(250): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(251): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\hayden\desktop\glfw_code\glfw opengl 1st test\main.cpp(258): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   GLFW OpenGL 1st Test.vcxproj -> C:\Users\Hayden\Desktop\glfw_code\Debug\GLFW OpenGL 1st Test.exe

@@ -14,5 +14,6 @@
 #include <iostream>
 #include "application.h"
 #include "camera.h"
+#include "btBulletDynamicsCommon.h"
 
 #endif

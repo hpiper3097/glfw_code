@@ -7,5 +7,4 @@ class Manager : public Singleton<Manager>
 {
 
 };
-
 #endif

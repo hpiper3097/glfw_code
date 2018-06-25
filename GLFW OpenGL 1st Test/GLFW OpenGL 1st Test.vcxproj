@@ -79,6 +79,8 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Hayden\Desktop\glfw_code\bullet_src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -145,6 +147,17 @@
     <None Include="basicFragmentShader.fs" />
     <None Include="basicFragmentShader2.fs" />
     <None Include="basicVertexShader.vs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bullet_build\src\BulletCollision\BulletCollision.vcxproj">
+      <Project>{e4fc7a6a-c5cf-3f25-a132-77835049154b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\bullet_build\src\BulletDynamics\BulletDynamics.vcxproj">
+      <Project>{444ced19-bab7-3d61-9e60-56f18be3abdb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\bullet_build\src\LinearMath\LinearMath.vcxproj">
+      <Project>{d9aee14e-9de9-315d-becf-e7351b129591}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

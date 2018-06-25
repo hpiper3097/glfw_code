@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DADBCB55-0DEB-3C0A-B9D2-C5261FEB5634}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>App_TwoJoint</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\TwoJoint\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">App_TwoJoint.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">App_TwoJoint_d</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\TwoJoint\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">App_TwoJoint.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">App_TwoJoint</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\TwoJoint\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">App_TwoJoint.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">App_TwoJoint</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\TwoJoint\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">App_TwoJoint.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">App_TwoJoint</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Hayden\Desktop\bullet3\bullet3-master\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\include;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\clsocket\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_DEBUG;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;BT_ENABLE_CLSOCKET;BT_ENABLE_ENET;GLEW_STATIC;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;BT_ENABLE_CLSOCKET;BT_ENABLE_ENET;GLEW_STATIC;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Hayden\Desktop\bullet3\bullet3-master\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\include;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\clsocket\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Hayden\Desktop\bullet3\bullet3-master\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\include;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\clsocket\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;opengl32.lib;glu32.lib;ws2_32.lib;..\..\lib\Debug\BulletExampleBrowserLib_Debug.lib;..\..\lib\Debug\BulletFileLoader_Debug.lib;..\..\lib\Debug\BulletWorldImporter_Debug.lib;..\..\lib\Debug\BulletSoftBody_Debug.lib;..\..\lib\Debug\BulletDynamics_Debug.lib;..\..\lib\Debug\BulletCollision_Debug.lib;..\..\lib\Debug\BulletInverseDynamicsUtils_Debug.lib;..\..\lib\Debug\BulletInverseDynamics_Debug.lib;..\..\lib\Debug\LinearMath_Debug.lib;..\..\lib\Debug\OpenGLWindow_Debug.lib;..\..\lib\Debug\gwen_Debug.lib;..\..\lib\Debug\BussIK_Debug.lib;..\..\lib\Debug\Bullet3Common_Debug.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Hayden/Desktop/glfw_code/bullet_build/examples/TwoJoint/Debug/App_TwoJoint_d.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/Users/Hayden/Desktop/glfw_code/bullet_build/examples/TwoJoint/Debug/App_TwoJoint_d.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Hayden\Desktop\bullet3\bullet3-master\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\include;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\clsocket\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;BT_ENABLE_CLSOCKET;BT_ENABLE_ENET;GLEW_STATIC;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;BT_ENABLE_CLSOCKET;BT_ENABLE_ENET;GLEW_STATIC;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Hayden\Desktop\bullet3\bullet3-master\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\include;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\clsocket\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Hayden\Desktop\bullet3\bullet3-master\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\include;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\clsocket\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;opengl32.lib;glu32.lib;ws2_32.lib;..\..\lib\Release\BulletExampleBrowserLib.lib;..\..\lib\Release\BulletFileLoader.lib;..\..\lib\Release\BulletWorldImporter.lib;..\..\lib\Release\BulletSoftBody.lib;..\..\lib\Release\BulletDynamics.lib;..\..\lib\Release\BulletCollision.lib;..\..\lib\Release\BulletInverseDynamicsUtils.lib;..\..\lib\Release\BulletInverseDynamics.lib;..\..\lib\Release\LinearMath.lib;..\..\lib\Release\OpenGLWindow.lib;..\..\lib\Release\gwen.lib;..\..\lib\Release\BussIK.lib;..\..\lib\Release\Bullet3Common.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Hayden/Desktop/glfw_code/bullet_build/examples/TwoJoint/Release/App_TwoJoint.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/Users/Hayden/Desktop/glfw_code/bullet_build/examples/TwoJoint/Release/App_TwoJoint.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Hayden\Desktop\bullet3\bullet3-master\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\include;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\clsocket\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;BT_ENABLE_CLSOCKET;BT_ENABLE_ENET;GLEW_STATIC;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;BT_ENABLE_CLSOCKET;BT_ENABLE_ENET;GLEW_STATIC;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Hayden\Desktop\bullet3\bullet3-master\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\include;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\clsocket\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Hayden\Desktop\bullet3\bullet3-master\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\include;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\clsocket\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;opengl32.lib;glu32.lib;ws2_32.lib;..\..\lib\MinSizeRel\BulletExampleBrowserLib_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletFileLoader_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletWorldImporter_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletSoftBody_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletDynamics_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletCollision_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletInverseDynamicsUtils_MinsizeRel.lib;..\..\lib\MinSizeRel\BulletInverseDynamics_MinsizeRel.lib;..\..\lib\MinSizeRel\LinearMath_MinsizeRel.lib;..\..\lib\MinSizeRel\OpenGLWindow_MinsizeRel.lib;..\..\lib\MinSizeRel\gwen_MinsizeRel.lib;..\..\lib\MinSizeRel\BussIK_MinsizeRel.lib;..\..\lib\MinSizeRel\Bullet3Common_MinsizeRel.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Hayden/Desktop/glfw_code/bullet_build/examples/TwoJoint/MinSizeRel/App_TwoJoint.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/Users/Hayden/Desktop/glfw_code/bullet_build/examples/TwoJoint/MinSizeRel/App_TwoJoint.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Hayden\Desktop\bullet3\bullet3-master\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\include;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\clsocket\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;BT_ENABLE_CLSOCKET;BT_ENABLE_ENET;GLEW_STATIC;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;BT_ENABLE_CLSOCKET;BT_ENABLE_ENET;GLEW_STATIC;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Hayden\Desktop\bullet3\bullet3-master\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\include;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\clsocket\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Hayden\Desktop\bullet3\bullet3-master\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\include;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\clsocket\src;C:\Users\Hayden\Desktop\bullet3\bullet3-master\btgui\OpenGLWindow\GlewWindows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;opengl32.lib;glu32.lib;ws2_32.lib;..\..\lib\RelWithDebInfo\BulletExampleBrowserLib_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletFileLoader_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletWorldImporter_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletSoftBody_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletDynamics_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletCollision_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletInverseDynamicsUtils_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BulletInverseDynamics_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\LinearMath_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\OpenGLWindow_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\gwen_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\BussIK_RelWithDebugInfo.lib;..\..\lib\RelWithDebInfo\Bullet3Common_RelWithDebugInfo.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Hayden/Desktop/glfw_code/bullet_build/examples/TwoJoint/RelWithDebInfo/App_TwoJoint.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/Users/Hayden/Desktop/glfw_code/bullet_build/examples/TwoJoint/RelWithDebInfo/App_TwoJoint.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\TwoJoint\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/Hayden/Desktop/bullet3/bullet3-master/examples/TwoJoint/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/Hayden/Desktop/bullet3/bullet3-master -BC:/Users/Hayden/Desktop/glfw_code/bullet_build --check-stamp-file C:/Users/Hayden/Desktop/glfw_code/bullet_build/examples/TwoJoint/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/Hayden/Desktop/bullet3/bullet3-master/examples/TwoJoint/CMakeLists.txt;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\TwoJoint\CMakeLists.txt;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\TwoJoint\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\TwoJoint\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/Hayden/Desktop/bullet3/bullet3-master/examples/TwoJoint/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/Hayden/Desktop/bullet3/bullet3-master -BC:/Users/Hayden/Desktop/glfw_code/bullet_build --check-stamp-file C:/Users/Hayden/Desktop/glfw_code/bullet_build/examples/TwoJoint/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/Hayden/Desktop/bullet3/bullet3-master/examples/TwoJoint/CMakeLists.txt;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\TwoJoint\CMakeLists.txt;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\TwoJoint\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\TwoJoint\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/Hayden/Desktop/bullet3/bullet3-master/examples/TwoJoint/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/Hayden/Desktop/bullet3/bullet3-master -BC:/Users/Hayden/Desktop/glfw_code/bullet_build --check-stamp-file C:/Users/Hayden/Desktop/glfw_code/bullet_build/examples/TwoJoint/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Users/Hayden/Desktop/bullet3/bullet3-master/examples/TwoJoint/CMakeLists.txt;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\TwoJoint\CMakeLists.txt;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\TwoJoint\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\TwoJoint\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/Hayden/Desktop/bullet3/bullet3-master/examples/TwoJoint/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/Hayden/Desktop/bullet3/bullet3-master -BC:/Users/Hayden/Desktop/glfw_code/bullet_build --check-stamp-file C:/Users/Hayden/Desktop/glfw_code/bullet_build/examples/TwoJoint/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/Hayden/Desktop/bullet3/bullet3-master/examples/TwoJoint/CMakeLists.txt;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\TwoJoint\CMakeLists.txt;C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\TwoJoint\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\TwoJoint\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\TwoJoint\TwoJointMain.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\plugins\pdControlPlugin\pdControlPlugin.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\plugins\pdControlPlugin\pdControlPlugin.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\b3RobotSimulatorClientAPI_NoDirect.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\b3RobotSimulatorClientAPI_NoDirect.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\IKTrajectoryHelper.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\IKTrajectoryHelper.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ExampleBrowser\InProcessExampleBrowser.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\plugins\tinyRendererPlugin\tinyRendererPlugin.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\plugins\tinyRendererPlugin\TinyRendererVisualShapeConverter.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\OpenGLWindow\SimpleCamera.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\OpenGLWindow\SimpleCamera.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\TinyRenderer\geometry.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\TinyRenderer\model.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\TinyRenderer\tgaimage.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\TinyRenderer\our_gl.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\TinyRenderer\TinyRenderer.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\InProcessMemory.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsClient.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsClient.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsServer.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsServer.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsServerExample.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsServerExampleBullet2.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\SharedMemoryInProcessPhysicsC_API.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsServerSharedMemory.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsServerSharedMemory.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsDirect.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsDirect.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsDirectC_API.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsDirectC_API.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsServerCommandProcessor.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsServerCommandProcessor.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\b3PluginManager.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory_C_API.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory_C_API.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsClientC_API.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsClientC_API.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\Win32SharedMemory.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\Win32SharedMemory.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PosixSharedMemory.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PosixSharedMemory.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\Utils\b3ResourcePath.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\Utils\b3ResourcePath.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\Utils\RobotLoggingUtil.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\Utils\RobotLoggingUtil.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\tinyxml2\tinyxml2.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\Wavefront\tiny_obj_loader.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\Wavefront\tiny_obj_loader.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\stb_image\stb_image.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\Importers\ImportColladaDemo\LoadMeshFromCollada.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\Importers\ImportObjDemo\LoadMeshFromObj.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\Importers\ImportURDFDemo\BulletUrdfImporter.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\Importers\ImportURDFDemo\URDF2Bullet.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\Importers\ImportURDFDemo\urdfStringSplit.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\Importers\ImportMeshUtility\b3ImportMeshUtility.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\MultiThreading\b3PosixThreadSupport.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\MultiThreading\b3Win32ThreadSupport.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\MultiThreading\b3ThreadSupportInterface.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsClientUDP.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsClientUDP_C_API.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsClientUDP.h" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsClientUDP_C_API.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\win32.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\unix.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\callbacks.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\compress.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\host.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\list.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\packet.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\peer.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\enet\protocol.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsClientTCP.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsClientTCP.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsClientTCP_C_API.cpp" />
+    <ClInclude Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\SharedMemory\PhysicsClientTCP_C_API.h" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\clsocket\src\SimpleSocket.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\clsocket\src\ActiveSocket.cpp" />
+    <ClCompile Include="C:\Users\Hayden\Desktop\bullet3\bullet3-master\examples\ThirdPartyLibs\clsocket\src\PassiveSocket.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\ZERO_CHECK.vcxproj">
+      <Project>{ED6A36AC-9CA0-3E28-99A6-22AECA1CC061}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\src\Bullet3Common\Bullet3Common.vcxproj">
+      <Project>{D3539E98-183B-3363-9080-6A2DC139BC9C}</Project>
+      <Name>Bullet3Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\src\BulletCollision\BulletCollision.vcxproj">
+      <Project>{E4FC7A6A-C5CF-3F25-A132-77835049154B}</Project>
+      <Name>BulletCollision</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\src\BulletDynamics\BulletDynamics.vcxproj">
+      <Project>{444CED19-BAB7-3D61-9E60-56F18BE3ABDB}</Project>
+      <Name>BulletDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\ExampleBrowser\BulletExampleBrowserLib.vcxproj">
+      <Project>{5A92E689-6AD7-378F-B655-29958A610F60}</Project>
+      <Name>BulletExampleBrowserLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\Extras\Serialize\BulletFileLoader\BulletFileLoader.vcxproj">
+      <Project>{5BB6FF06-CE4D-3462-AAA7-3E2E6B9E00ED}</Project>
+      <Name>BulletFileLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\src\BulletInverseDynamics\BulletInverseDynamics.vcxproj">
+      <Project>{3DF481D0-589D-376D-A8C3-6C1CC0F3F13F}</Project>
+      <Name>BulletInverseDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\Extras\InverseDynamics\BulletInverseDynamicsUtils.vcxproj">
+      <Project>{68286945-F88C-31B2-9DE5-1B8531539B0E}</Project>
+      <Name>BulletInverseDynamicsUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\src\BulletSoftBody\BulletSoftBody.vcxproj">
+      <Project>{E935C977-1DAD-3D0E-ADB6-8B61D809F16E}</Project>
+      <Name>BulletSoftBody</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\Extras\Serialize\BulletWorldImporter\BulletWorldImporter.vcxproj">
+      <Project>{1F122755-9AC7-3884-B718-0674F31FAABE}</Project>
+      <Name>BulletWorldImporter</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\ThirdPartyLibs\BussIK\BussIK.vcxproj">
+      <Project>{540204B3-2D77-38A2-A944-CD2512A80206}</Project>
+      <Name>BussIK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\src\LinearMath\LinearMath.vcxproj">
+      <Project>{D9AEE14E-9DE9-315D-BECF-E7351B129591}</Project>
+      <Name>LinearMath</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\OpenGLWindow\OpenGLWindow.vcxproj">
+      <Project>{3C332C43-B69D-3606-B55E-747CF19470FA}</Project>
+      <Name>OpenGLWindow</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Hayden\Desktop\glfw_code\bullet_build\examples\ThirdPartyLibs\Gwen\gwen.vcxproj">
+      <Project>{7F2F0207-6B68-36A3-BC31-C70899FD5A89}</Project>
+      <Name>gwen</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

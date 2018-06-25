@@ -87,6 +87,17 @@ int main()
 {
 
 	Application app(SCR_WIDTH, SCR_HEIGHT);
+	
+	btBroadphaseInterface* broadphase = new btDbvtBroadphase();
+	
+	btDefaultCollisionConfiguration* collisionConfig = new btDefaultCollisionConfiguration();
+	btCollisionDispatcher* dispatcher = new btCollisionDispatcher(collisionConfig);
+
+	btSequentialImpulseConstraintSolver* solver = new btSequentialImpulseConstraintSolver;
+
+	btDiscreteDynamicsWorld* dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher, broadphase, solver, collisionConfig);
+	dynamicsWorld->setGravity(btVector3(0.0f, -10.0f, 0.0f)); // use btVectors for bullet functions; glm in other places for now
+	
 	glfwSetScrollCallback(app.Window(), scroll_callback);
 	glfwSetCursorPosCallback(app.Window(), mouse_callback);
 
@@ -159,9 +170,9 @@ int main()
 		glBindVertexArray(VAO);
 
 		shader1.setFloat("mixVar", mixVar);
-	
+
 		glm::mat4 persProj = glm::perspective(glm::radians(cam.zoom), static_cast<float>(SCR_WIDTH) / static_cast<float>(SCR_HEIGHT), 0.1f, 100.0f);
-		shader1.setMat4("projection",persProj);
+		shader1.setMat4("projection", persProj);
 
 		glm::mat4 view = cam.GetViewMatrix();
 		shader1.setMat4("view", view);
@@ -184,6 +195,13 @@ int main()
 
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
+	
+	delete dynamicsWorld;
+	delete solver;
+	delete dispatcher;
+	delete collisionConfig;
+	delete broadphase;
+
 	return 0;
 }
 
@@ -196,14 +214,14 @@ void processInput(GLFWwindow* window, float &mixVar)
 
 	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
 	{
-		mixVar += 0.0005;
+		mixVar += .5 * deltaTime;
 		if (mixVar > 1.0)
 			mixVar = 1.0;
 	}
 
 	if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
 	{
-		mixVar -= 0.0005;
+		mixVar -= .5 * deltaTime;
 		if (mixVar < 0)
 			mixVar = 0;
 	}

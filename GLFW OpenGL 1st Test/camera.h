@@ -5,9 +5,6 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-#include <vector>
-
-// Defines several possible options for camera movement. Used as abstraction to stay away from window-system specific input methods
 enum class Camera_Movement {
 	FORWARD,
 	BACKWARD,
@@ -26,7 +23,7 @@ const float ZOOM = 45.0f;
 class Camera
 {
 public:
-	//camera attrib
+	//camera attribs
 	glm::vec3 Position, Front, Up, Right, WorldUp;
 
 	float yaw, pitch;
@@ -45,7 +42,8 @@ public:
 		return glm::lookAt(Position, Position + Front, Up);
 	}
 
-	// Processes input received from any keyboard-like input system. Accepts input parameter in the form of camera defined ENUM (to abstract it from windowing systems)
+	// Processes input received from any keyboard-like input system. 
+	//Accepts input parameter in the form of camera defined ENUM (to abstract it from windowing systems)
 	void ProcessKeyboard(Camera_Movement direction, float deltaTime)
 	{
 		float velocity = movementSpeed * deltaTime;
